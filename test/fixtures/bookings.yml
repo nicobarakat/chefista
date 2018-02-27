@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  date: 2018-02-27
+  confirm: false
+
+two:
+  date: 2018-02-27
+  confirm: false
