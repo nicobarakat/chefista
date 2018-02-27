@@ -2,6 +2,7 @@ class ChefsController < ApplicationController
   before_action :set_chef, only: [:show, :edit, :update, :destroy]
 
   def index
+    @chefs = policy_scope(Chef).order(created_at: :desc)
   end
 
   def show
@@ -10,6 +11,10 @@ class ChefsController < ApplicationController
 
   def new
     @chef = Chef.new
+    authorize @chef
+  end
+
+  def edit
     authorize @chef
   end
 
