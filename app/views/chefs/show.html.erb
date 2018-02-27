@@ -1,1 +1,11 @@
 <h1>This is the chef show page</h1>
+<p>Name: <%= @chef.name %> </p>
+<p>Title: <%= @chef.title %>
+<p>Description: <%= @chef.description %>
+<p>Price: <%= @chef.price %>
+  <hr>
+<%= link_to "Edit Chef", edit_chef_path(@chef)  %>
+  <hr>
+
+<%= link_to "Go Back", root_path  %>
+
