@@ -10,9 +10,11 @@ class ChefsController < ApplicationController
 
   def new #DONE
     @chef = Chef.new
+    authorize @chef
   end
 
   def create #DONE
+    authorize @chef
     @chef = Chef.new(chef_params)
     @chef.save
     redirect_to chefs_path
