@@ -1,2 +1,7 @@
-<h1>Bookings#show</h1>
-<p>Find me in app/views/bookings/show.html.erb</p>
+<h1>Please see the details of your booking below:</h1>
+<h2>Date: <%= @booking.date %></h2>
+<h4>Chef: <%= @booking.chef.name %></h4>
+<h4>Location : <%= @booking.user.address %></h4>
+
+<p> <%= link_to "Update", update_path %> </p>
+
