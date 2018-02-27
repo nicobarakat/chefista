@@ -1,35 +1,26 @@
 class ChefsController < ApplicationController
   before_action :set_chef, only: [:show, :edit, :update, :destroy]
 
-  def index #DONE
-    @chefs = Chef.all
+  def index
   end
 
-  def show #DONE
+  def show
+    authorize @chef
   end
 
-  def new #DONE
+  def new
     @chef = Chef.new
     authorize @chef
   end
 
-  def create #DONE
-    authorize @chef
+  def create
     @chef = Chef.new(chef_params)
     @chef.save
-    redirect_to chefs_path
+    authorize @chef
+    redirect_to chef_path(@chef)
   end
 
-  def edit #DONE
-    @chef = Chef.find(params[:id])
-  end
-
-  def update #DONE
-    @chef.update(chef_params)
-    redirect_to chefs_path
-  end
-
-  def destroy #DONE
+  def destroy
     @chef.destroy
     redirect_to chefs_path
   end
