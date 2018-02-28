@@ -1,0 +1,24 @@
+<h1>This is the Dashboard page</h1>
+<hr>
+<h3>Your Requests</h3>
+<hr>
+<ul>
+  <% Booking.all.each do |booking| %>
+  <li>
+   <p>
+     <%= Chef.find(booking.chef_id).name %>
+   </p>
+
+   <p>
+    <%= booking.confirmation ? "This booking is confirmed!": "Pending"%>
+  </p>
+
+  <p>
+    <%= booking.date %>
+  </p>
+
+  <%= button_to "Cancel this booking", booking_path(booking), method: :delete %>
+  <hr>
+</li>
+<% end %>
+</ul>
