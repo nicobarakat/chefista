@@ -1,7 +1,7 @@
 <h1>This is the chef show page</h1>
 <p>Name: <%= @chef.name %> </p>
 <p>Title: <%= @chef.title %>
-<p>Description: <%= @chef.description %>
+<p>Description: <%= @chef.description.nil? ? "No description available" : @chef.description %>
 <p>Price: <%= @chef.price %>
   <hr>
 <%= link_to "Book Chef", new_chef_booking_path(@chef)  %>

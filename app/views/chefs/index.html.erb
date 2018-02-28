@@ -1,18 +1,11 @@
 <h1>This is the chef index page</h1>
-
-
 <hr>
-
 <div class="menu">
   <%= link_to "Add A Chef", new_chef_path, class: "menu_item"%>
 </div>
-
 <hr>
 
-<div class="row">
-  <% @chefs.each do |chef| %>
-  <p><%= link_to chef.name, chef_path(chef) %></p>
-  <% end %>
-</div>
-
+<% @chefs.each do |chef| %>
+<p><%= link_to chef.name, chef_path(chef) %></p>
+<% end %>
 
