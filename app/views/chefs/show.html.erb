@@ -1,17 +1,19 @@
-<h1>This is the chef show page</h1>
-<p>Name: <%= @chef.name %> </p>
-<p>Title: <%= @chef.title %>
-<p>Description: <%= @chef.description.nil? ? "No description available" : @chef.description %>
-<p>Price: <%= @chef.price %>
+
+<div class="chef_details">
+  <h1><%= @chef.name%><%="'s details"%></h1>
+
+  <p>Title: <%= @chef.title %>
+  <p>Description: <%= @chef.description.nil? ? "No description available" : @chef.description %>
+  <p>Price: <%= @chef.price %>
   <hr>
 
   <% @chef.bookings.each do |booking| %>
-    <h1>Booking number:</h1><%= booking.id %>
+  <h1>Booking number:</h1><%= booking.id %>
   <% end %>
 
-<%= link_to "Go Back", chefs_path  %>
+  <%= link_to "Go Back", chefs_path  %>
 
-<%#= link_to "Book This Chef", chef_bookings_path(@chef), method: :post, confirm: "Are you sure?"  %>
+        <%#= link_to "Book This Chef", chef_bookings_path(@chef), method: :post, confirm: "Are you sure?"  %>
 
-<%= button_to "Book this chef", chef_bookings_path(@chef) %>
-
+  <%= button_to "Book this chef", chef_bookings_path(@chef) %>
+</div>
