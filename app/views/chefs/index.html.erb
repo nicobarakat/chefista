@@ -9,3 +9,10 @@
 <p><%= link_to chef.name, chef_path(chef) %></p>
 <% end %>
 
+<div
+  id="map"
+  style="width: 100%;
+  height: 600px;"
+  data-markers="<%= @markers.to_json %>"
+></div>
+
