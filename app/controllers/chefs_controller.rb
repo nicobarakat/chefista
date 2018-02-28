@@ -8,7 +8,7 @@ class ChefsController < ApplicationController
     @markers = @map_chefs.map do |chef|
       {
         lat: chef.latitude,
-        lng: chef.longitude#,
+        lng: chef.longitude
       }
     end
 
