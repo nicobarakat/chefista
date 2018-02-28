@@ -3,6 +3,15 @@ class ChefsController < ApplicationController
 
   def index
     @chefs = policy_scope(Chef).order(created_at: :desc)
+    @map_chefs = Chef.where.not(latitude: nil, longitude: nil)
+
+    @markers = @map_chefs.map do |chef|
+      {
+        lat: chef.latitude,
+        lng: chef.longitude
+      }
+    end
+
   end
 
   def show
@@ -37,6 +46,6 @@ class ChefsController < ApplicationController
   end
 
   def chef_params
-    params.require(:chef).permit(:name, :title, :rating, :description, :price, :categories)
+    params.require(:chef).permit(:name, :title, :rating, :description, :price, :categories, :address)
   end
 end
