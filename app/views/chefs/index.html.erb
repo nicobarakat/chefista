@@ -4,17 +4,15 @@
   <%= link_to "Add A Chef", new_chef_path, class: "menu_item"%>
 </div>
 <hr>
-<div class="row">
-  <% @chefs.each do |chef| %>
-  <div class="card">
-    <div class="card-description">
-      <h4> <%= link_to chef.name, chef_path(chef) %> </h4>
-    </div>
-  </div>
 
-  <% end %>
-</div>
+<% @chefs.each do |chef| %>
+<p><%= link_to chef.name, chef_path(chef) %></p>
+<% end %>
 
-
-
+<div
+  id="map"
+  style="width: 100%;
+  height: 600px;"
+  data-markers="<%= @markers.to_json %>"
+></div>
 
