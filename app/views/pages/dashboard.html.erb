@@ -1,0 +1,13 @@
+<h1>Dashboard</h1>
+
+<h2>Your requests:</h2>
+
+<% @requests.each do |request| %>
+<p> <%= request.chef.name %> </p>
+<p> <%= "02.04.2018" %></p>
+<% end %>
+
+<% @chef_bookings.each do |booking| %>
+<p><%= booking.user %></p>
+<p><%= "25.03.2018" %></p>
+<% end %>
