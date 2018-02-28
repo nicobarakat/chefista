@@ -4,5 +4,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
   has_many :bookings
+  has_many :chefs
+  has_many :chef_bookings, through: :chefs, source: :bookings #chefs ia a table
 
 end

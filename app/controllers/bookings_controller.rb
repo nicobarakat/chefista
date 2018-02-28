@@ -1,22 +1,27 @@
 class BookingsController < ApplicationController
-  def index
-    @bookings = current_user.bookings
-  end
+  before_action :authenticate_user!
 
   def show
     @booking = Booking.find(params[:id])
   end
 
   def new
-    @booking = Booking.new
+
   end
 
   def create
-    @booking = Booking.new(booking_params)
+    @chef = Chef.find(params[:chef_id])
+    @booking = Booking.new(chef: @chef, user: current_user)
+    authorize @booking
+
     if @booking.save
-      redirect_to root_path(@booking)
+      redirect_to root_path
+    else
+      redirect_to chef_path(@chef)
     end
+
   end
+
 
   def edit
     @booking = Booking.find(params[:id])
