@@ -4,7 +4,7 @@
 <p>Description: <%= @chef.description %>
 <p>Price: <%= @chef.price %>
   <hr>
-<%= link_to "Book Chef", new_booking_path  %>
+<%= link_to "Book Chef", new_chef_booking_path(@chef)  %>
   <hr>
 
 <%= link_to "Go Back", chefs_path  %>
