@@ -9,5 +9,3 @@
 20.times do |x|
   Chef.create(name: Faker::Name.name, title: Faker::Name.title, rating: Faker::Number.between(1, 10), price: Faker::Number.between(10, 20))
 end
-
-Chef.create(name: "a", title: "b", rating: Faker::Number.between(1, 10), price: Faker::Number.between(10, 20))
