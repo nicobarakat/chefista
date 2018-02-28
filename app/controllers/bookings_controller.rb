@@ -11,7 +11,7 @@ class BookingsController < ApplicationController
     authorize @booking
 
     if @booking.save
-      redirect_to root_path
+      redirect_to dashboard_path
     else
       redirect_to chef_path(@chef)
     end
@@ -31,8 +31,9 @@ class BookingsController < ApplicationController
 
   def destroy
     @booking = Booking.find(params[:id])
+    authorize @booking
     @booking.destroy
-    redirect_to bookings_path
+    redirect_to dashboard_path
   end
 
   private
