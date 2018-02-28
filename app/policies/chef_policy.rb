@@ -1,7 +1,7 @@
 class ChefPolicy < ApplicationPolicy
   class Scope < Scope
     def resolve
-      scope
+      scope.all
     end
   end
 
@@ -18,6 +18,10 @@ class ChefPolicy < ApplicationPolicy
   end
 
   def index?
+    return true
+  end
+
+  def edit?
     return true
   end
 end
