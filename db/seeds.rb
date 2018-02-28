@@ -6,7 +6,6 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-Chef.create!(name: "Gordon Ramsey", title: "Professional cook and TV host", categories: "French", price: 100)
-Chef.create!(name: "Jamie Oliver", title: "Experienced in modern cuisine", categories: "Italian", price: 200)
-Chef.create!(name: "Anthony Bourdain", title: "All-around styles", categories: ["Asian", "French", "Italian"], price: 300)
-Chef.create!(name: "Wolfgang Puck", title: "Veteran cook", categories: "European", price: 400)
+20.times do |x|
+  Chef.create(name: Faker::Name.name, title: Faker::Name.title, rating: Faker::Number.between(1, 10), price: Faker::Number.between(10, 20))
+end
