@@ -1,35 +1,43 @@
-<h1>This is the chef index page</h1>
-<hr>
-<div class="menu">
-  <%= link_to "Add A Chef", new_chef_path, class: "menu_item"%>
-</div>
+<h1>Results</h1>
 <hr>
 
-<div class="row">
-  <% @chefs.each do |chef| %>
-  <div class="col-xs-12 col-sm-4">
-    <div class="card" >
-      <div class="card-description">
-      </div>
-    </div>
-    <!-- <div class="row"> -->
-      <div class="chef-details row">
-        <div class="col-xs-8">
-          <div class="chef-name">
-            <h4> <%= link_to chef.name, chef_path(chef) %> </h4>
-            <p> <%= chef.title %></p>
+labels
+
+<hr>
+
+<div class="container">
+  <div class="row">
+    <% @chefs.each do |chef| %>
+      <div class="card">
+        <div class="col-xs-12 col-sm-4">
+          <div class="card-picture">
+             <%= link_to "", chef_path(chef), class: "card-link" %>
           </div>
-        </div>
-        <div class="col-xs-4">
-          <div class="price">
-            <span><%= chef.price %>€</span> <span>pp</span>
+          <div class="chef-details row">
+            <%= link_to chef_path(chef) do %>
+            <div class="col-xs-8">
+              <div class="chef-name">
+                <h4> <%= chef.name %> </h4>
+                <p> <%= chef.title %> </p>
+                <p> <% chef.rating.times do %>
+                  <i class="fas fa-star"></i>
+                <% end %> </p>
+              </div>
+            </div>
+            <div class="col-xs-4">
+              <div class="price">
+                <span><%= chef.price %>€</span> <span>pp</span>
+              </div>
+            </div>
+            <% end %>
           </div>
+
         </div>
       </div>
-      <!-- </div> -->
-    </div>
     <% end %>
   </div>
+</div>
 
-<div id="map" style="width: 100%; height: 600px;" data-markers="<%= @markers.to_json %>"></div>
+<div id="map" style="width: 100%; height: 600px;" data-markers="<%= @markers.to_json %>">
+</div>
 
