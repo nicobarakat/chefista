@@ -19,7 +19,6 @@
 
   <% if current_user.id == booking.chef.user_id %>
   <%# THIS WILL BE DISPLAYED IF THE CURRENT USER IS THE BOOKING CHEF %>
-  <%= link_to "Confirm This Booking!", "#" %>
   <% else %>
   <%# THIS WILL BE DISPLAYED IF THE CURRENT USER IS NOT THE BOOKING CHEF %>
   <% end %>
