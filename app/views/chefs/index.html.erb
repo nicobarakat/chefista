@@ -1,4 +1,6 @@
-<h1>Results</h1>
+<div class="container">
+<h1 class="results">Find your Chefista</h1>
+</div>
 <hr>
 
 <div class="container">
@@ -6,7 +8,7 @@
     <% @chefs.each do |chef| %>
       <div class="card">
         <div class="col-xs-12 col-sm-4">
-          <div class="card-picture">
+          <div class="card-picture" style="background-image: url('<%= cl_image_path chef.photo %>');">
              <%= link_to "", chef_path(chef), class: "card-link" %>
           </div>
           <div class="chef-details row">
