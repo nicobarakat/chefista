@@ -23,7 +23,7 @@
   <%# THIS WILL BE DISPLAYED IF THE CURRENT USER IS NOT THE BOOKING CHEF %>
   <% end %>
   <%= button_to "Cancel this booking", booking_path(booking), method: :delete %>
-  <%= link_to "See this booking", dashboard_path %>
+  <%= link_to "See this booking", chef_booking_path([Chef.find(booking.chef_id)], booking) %>
   <hr>
 </li>
 <% end %>
