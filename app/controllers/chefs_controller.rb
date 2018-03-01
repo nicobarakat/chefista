@@ -29,6 +29,7 @@ class ChefsController < ApplicationController
 
   def create
     @chef = Chef.new(chef_params)
+    @chef.user_id = current_user.id
     @chef.save
     authorize @chef
     redirect_to chef_path(@chef)
