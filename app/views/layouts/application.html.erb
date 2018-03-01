@@ -12,7 +12,9 @@
 <body>
   <%= render 'shared/navbar' %>
   <%= render 'shared/flashes' %>
+  <div >
   <%= yield %>
+  </div>
   <%= javascript_pack_tag 'application' %>
   <%= javascript_include_tag "https://maps.googleapis.com/maps/api/js" %>
   <%= javascript_pack_tag "maps" %> <!-- add this line -->
