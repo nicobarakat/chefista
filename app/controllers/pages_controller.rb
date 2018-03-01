@@ -8,4 +8,8 @@ class PagesController < ApplicationController
     @user = current_user
   end
 
+  def inbox
+    @user = current_user
+  end
+
 end
