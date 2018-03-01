@@ -32,7 +32,6 @@ class ChefsController < ApplicationController
     @chef.user_id = current_user.id
     @chef.save
     authorize @chef
-    current_user.isChef = true
     redirect_to chef_path(@chef)
   end
 
