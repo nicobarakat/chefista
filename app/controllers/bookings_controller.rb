@@ -22,8 +22,8 @@ class BookingsController < ApplicationController
 
   def update
     @booking = Booking.find(params[:id])
-    @booking.update(booking_params)
-    redirect_to root_path(@booking)
+    @booking.confirmation = true
+    redirect_to dashboard_path
   end
 
   def destroy
