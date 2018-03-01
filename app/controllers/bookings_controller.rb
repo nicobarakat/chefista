@@ -7,15 +7,12 @@ class BookingsController < ApplicationController
 
   def create
     @chef = Chef.find(params[:chef_id])
+    @chef.user_id = current_user.id
     @booking = Booking.new(chef: @chef, user: current_user)
     authorize @booking
-
     if @booking.save
       redirect_to dashboard_path
-    else
-      redirect_to chef_path(@chef)
     end
-
   end
 
 
