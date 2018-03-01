@@ -14,7 +14,7 @@ class BookingPolicy < ApplicationPolicy
   end
 
   def index?
-    return true
+    return false
   end
 
   def show?
