@@ -1,10 +1,6 @@
 <h1>Results</h1>
 <hr>
 
-labels
-
-<hr>
-
 <div class="container">
   <div class="row">
     <% @chefs.each do |chef| %>
@@ -19,9 +15,6 @@ labels
               <div class="chef-name">
                 <h4> <%= chef.name %> </h4>
                 <p> <%= chef.title %> </p>
-                <p> <% chef.rating.times do %>
-                  <i class="fas fa-star"></i>
-                <% end %> </p>
               </div>
             </div>
             <div class="col-xs-4">
