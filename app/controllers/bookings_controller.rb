@@ -7,6 +7,7 @@ class BookingsController < ApplicationController
 
   def show
     @booking = Booking.find(params[:id])
+    authorize @booking
   end
 
   def create
@@ -15,7 +16,7 @@ class BookingsController < ApplicationController
     @booking = Booking.new(chef: @chef, user: current_user)
     authorize @booking
     if @booking.save
-      redirect_to chef_bookings_path
+      redirect_to bookings_path
     end
   end
 
@@ -27,14 +28,14 @@ class BookingsController < ApplicationController
   def update
     @booking = Booking.find(params[:id])
     @booking.confirmation = true
-    redirect_to chef_bookings_path
+    redirect_to bookings_path
   end
 
   def destroy
     @booking = Booking.find(params[:id])
     authorize @booking
     @booking.destroy
-    redirect_to chef_bookings_path
+    redirect_to bookings_path
   end
 
   private
