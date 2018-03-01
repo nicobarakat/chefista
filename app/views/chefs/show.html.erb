@@ -22,6 +22,8 @@
   <%= button_to "Book this chef", chef_bookings_path(@chef) %>
   <% end %>
 
+  <%= cl_image_tag(@chef.photo, width: 400, height: 300, crop: :fill) %>
+
 
   <%= link_to "Go Back", chefs_path  %>
 
