@@ -1,8 +1,13 @@
 class BookingsController < ApplicationController
   before_action :authenticate_user!
 
+  def index
+    @bookings = policy_scope(Booking).order(created_at: :desc)
+  end
+
   def show
     @booking = Booking.find(params[:id])
+    authorize @booking
   end
 
   def create
@@ -11,7 +16,7 @@ class BookingsController < ApplicationController
     @booking = Booking.new(chef: @chef, user: current_user)
     authorize @booking
     if @booking.save
-      redirect_to dashboard_path
+      redirect_to bookings_path
     end
   end
 
@@ -23,14 +28,14 @@ class BookingsController < ApplicationController
   def update
     @booking = Booking.find(params[:id])
     @booking.confirmation = true
-    redirect_to dashboard_path
+    redirect_to bookings_path
   end
 
   def destroy
     @booking = Booking.find(params[:id])
     authorize @booking
     @booking.destroy
-    redirect_to dashboard_path
+    redirect_to bookings_path
   end
 
   private
