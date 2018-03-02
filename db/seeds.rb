@@ -23,10 +23,10 @@ chef = Chef.new({
 chef.save!
 
 chef = Chef.new({
-  name: "Thomas Keller",
-  title: "American chef, restaurateur, and cookbook writer.",
+  name: "Helena Rizzo",
+  title: "Brazilian chef, elected Female Chef of the Year in 2014.",
   price: 150,
-  remote_photo_url: cl_image_path("ThomasKeller.jpg")
+  remote_photo_url: cl_image_path("HelenaRizzo.jpg")
   })
 chef.save!
 
@@ -47,18 +47,18 @@ chef = Chef.new({
 chef.save!
 
 chef = Chef.new({
-  name: "Alex Atala",
-  title: "Brazilian chef who runs the restaurant D.O.M. in São Paulo.",
+  name: "Dominique Crenn",
+  title: "French chef owner of 2 Michelin stars Atelier Crenn.",
   price: 110,
-  remote_photo_url: cl_image_path("AlexAtala.jpg")
+  remote_photo_url: cl_image_path("DominiqueCrenn.jpg")
   })
 chef.save!
 
 chef = Chef.new({
-  name: "Emeril Lagasse",
-  title: "American celebrity chef, author, and Best Recipe award winner.",
+  name: "Hélène Darroze",
+  title: "French chef, 2 Michelin stars and owner of 3 restaurants",
   price: 270,
-  remote_photo_url: cl_image_path("EmerilLagasse.jpg")
+  remote_photo_url: cl_image_path("HeleneDarroze.jpg")
   })
 chef.save!
 
