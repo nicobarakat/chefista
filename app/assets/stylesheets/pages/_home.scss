@@ -51,17 +51,19 @@ h2 {
 .button-chef {
   background-color: #14cadc;
   border-radius: 5%;
-  box-shadow: 2px 2px #6d6565;
   font-style: bold;
   padding: 10px 10px;
-  color: white
+  color: white;
+  -webkit-transition: background-color 0.2s ease-out;
+  -moz-transition: background-color 0.2s ease-out;
+  -o-transition: background-color 0.2s ease-out;
+  transition: background-color 0.2s ease-out;
 }
 
 .button-chef:hover {
-  background-color: #53A548;
+  background-color: #11a5b2;
   text-decoration: none;
   border-radius: 5%;
-  box-shadow: 2px 3px #6d6565;
   font-style: bold;
   padding: 10px 10px;
   color: white
