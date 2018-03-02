@@ -4,7 +4,11 @@
       <div class="main-content">
         <%#= image_tag @chef.photo %>
         <h2><%= @chef.name %> </h2>
-        <%= button_to "Book This Chef", chef_bookings_path(@chef)%>
+        <% if @chef.user_id == current_user.id %>
+        <p>This is your listing!</p>
+        <% else %>
+        <%= button_to "Book This Chef", chef_bookings_path(@chef) , {class: 'btn btn-small'}%>
+        <% end %>
       </div>
     </div>
     <div class="stat">
