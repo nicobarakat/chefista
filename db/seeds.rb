@@ -18,23 +18,25 @@ chef = Chef.new({
   name: "Gordon Ramsey",
   title: "Professional chef and TV host.",
   price: 100,
-  remote_photo_url: cl_image_path("GordonRamsey.jpg")
+  remote_photo_url: cl_image_path("GordonRamsey.jpg"),
+  address: Faker::Address.street_address #=> "282 Kevin Brook"
   })
 chef.save!
 
 chef = Chef.new({
-  name: "Thomas Keller",
-  title: "American chef, restaurateur, and cookbook writer.",
+  name: "Helena Rizzo",
+  title: "Brazilian chef, elected Female Chef of the Year in 2014.",
   price: 150,
-  remote_photo_url: cl_image_path("ThomasKeller.jpg")
+  remote_photo_url: cl_image_path("HelenaRizzo.jpg"),
+  address: Faker::Address.street_address #=> "282 Kevin Brook"
   })
 chef.save!
 
 chef = Chef.new({
-  name: "René Redzepi",
-  title: "Danish chef and owner of the 2 Michelin star restaurant Noma.",
-  price: 200,
-  remote_photo_url: cl_image_path("ReneRedzepi.jpg")
+  name: "Feiko Boerstra",
+  title: "Meatball marinara master",
+  price: 0,
+  remote_photo_url: cl_image_path("Feiko.jpg")
   })
 chef.save!
 
@@ -42,23 +44,26 @@ chef = Chef.new({
   name: "Jamie Oliver",
   title: "British celebrity chef and restaurateur.",
   price: 70,
-  remote_photo_url: cl_image_path("JamieOliver.jpg")
+  remote_photo_url: cl_image_path("JamieOliver.jpg"),
+  address: Faker::Address.street_address #=> "282 Kevin Brook"
   })
 chef.save!
 
 chef = Chef.new({
-  name: "Alex Atala",
-  title: "Brazilian chef who runs the restaurant D.O.M. in São Paulo.",
+  name: "Dominique Crenn",
+  title: "French chef owner of 2 Michelin stars Atelier Crenn.",
   price: 110,
-  remote_photo_url: cl_image_path("AlexAtala.jpg")
+  remote_photo_url: cl_image_path("DominiqueCrenn.jpg"),
+  address: Faker::Address.street_address #=> "282 Kevin Brook"
   })
 chef.save!
 
 chef = Chef.new({
-  name: "Emeril Lagasse",
-  title: "American celebrity chef, author, and Best Recipe award winner.",
+  name: "Hélène Darroze",
+  title: "French chef, 2 Michelin stars and owner of 3 restaurants.",
   price: 270,
-  remote_photo_url: cl_image_path("EmerilLagasse.jpg")
+  remote_photo_url: cl_image_path("HeleneDarroze.jpg"),
+  address: Faker::Address.street_address #=> "282 Kevin Brook"
   })
 chef.save!
 
@@ -66,15 +71,17 @@ chef = Chef.new({
   name: "André Chiang",
   title: " Taiwanese chef former head of the three Michelin star restaurant.",
   price: 250,
-  remote_photo_url: cl_image_path("AndreChiang.jpg")
+  remote_photo_url: cl_image_path("AndreChiang.jpg"),
+  address: Faker::Address.street_address #=> "282 Kevin Brook"
   })
 chef.save!
 
 chef = Chef.new({
   name: "Anthony Bourdain",
-  title: "Veteran of numerous professional kitchens",
+  title: "Veteran of numerous professional kitchens.",
   price: 260,
-  remote_photo_url: cl_image_path("AnthonyBourdain.jpg")
+  remote_photo_url: cl_image_path("AnthonyBourdain.jpg"),
+  address: Faker::Address.street_address #=> "282 Kevin Brook"
   })
 chef.save!
 
@@ -82,7 +89,8 @@ chef = Chef.new({
   name: "Alain Ducasse",
   title: "French-born Monégasque chef. 3 stars in the Michelin Guide.",
   price: 260,
-  remote_photo_url: cl_image_path("AlainDucasse.jpg")
+  remote_photo_url: cl_image_path("AlainDucasse.jpg"),
+  address: Faker::Address.street_address #=> "282 Kevin Brook"
   })
 chef.save!
 

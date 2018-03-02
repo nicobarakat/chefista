@@ -21,7 +21,11 @@
         </div>
         <div class="col-xs-4">
           <div class="price">
-            <span><%= chef.price %>€</span> <span>pp</span>
+            <% if chef.price == 0 %>
+              <span><%= "FREE" %></span>
+            <% else %>
+              <span><%= chef.price %>€</span> <span>pp</span>
+            <% end %>
           </div>
         </div>
         <% end %>
@@ -30,8 +34,5 @@
   </div>
   <% end %>
 </div>
-</div>
-
-<div id="map" style="width: 100%; height: 600px;" data-markers="<%= @markers.to_json %>">
 </div>
 
