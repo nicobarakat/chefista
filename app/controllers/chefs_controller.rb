@@ -31,18 +31,8 @@ class ChefsController < ApplicationController
     @chef = Chef.new(chef_params)
     @chef.user_id = current_user.id
     @chef.save
-    if @chef.save
-      respond_to do |format|
-        format.html { redirect_to chef_path(@chef) }
-        format.js  # <-- will render `app/views/reviews/create.js.erb`
-      end
-    else
-      respond_to do |format|
-        format.html { render 'chefs/show' }
-        format.js  # <-- idem
-      end
-    end
     authorize @chef
+    redirect_to chef_path(@chef)
   end
 
   def destroy
