@@ -1,47 +1,29 @@
-
-<div class="container-chef-show">
-  <div class="profile text-center">
-    <div class="main">
-      <div class="main-content">
-        <%= image_tag "matt-preston.jpg" %>
-        <h2>Chef name</h2>
-        <p>Specialties</p>
-        <a href="#" class="btn btn-primary btn-lg">Book me now!</a>
-      </div>
-    </div>
-    <div class="stat">
-      <div class="stat-content">
-        <h3>239</h3>
-        <p>Ratings</p>
-      </div>
-    </div>
-    <div class="stat">
-      <div class="stat-content">
-        <h3>686</h3>
-        <p>meals cooked</p>
-      </div>
-    </div>
-    <div class="stat">
-      <div class="stat-content">
-        <h3>41</h3>
-        <p>specialties</p>
-      </div>
-    </div>
-    <div class="description">
-      <div class="description-content">
-        <h3>More about this chef</h3>
-        <p class="text-justify">
-          After working in a high-end restaurant for about 20 years, I decided to spend more time with my family and cook from home. Nowadays, I'm a very versatile cuisineur that is able to cook in many different directions, but since my roots are in Honduras I prefer this dish. The national dish of Honduras is a mountain of food, the plato típico: a heaping, carb overload of beef, plantains, beans, marinated cabbage, fresh cream, and tortillas. Anafres, a refried black bean and cheese fondue served in a clay pot accompanied by tortilla chips, is the favorite appetizer in the country.
-        </p>
-      </div>
-    </div>
-  </div>
+<div class="chef_details">
+  <h1><%= @chef.name%><%="'s details"%></h1>
+  <% if user_signed_in? %>
+  <% if @chef.user_id == current_user.id %>
+  <p>This is your listing!</p>
+  <hr>
+  <p>Title: <%= @chef.title %></p>
+  <p>Description: <%= @chef.description.nil? ? "No description available" : @chef.description %></p>
+  <p>Price: <%= @chef.price %></p>
+  <hr>
+  <% else %>
+  <p>Title: <%= @chef.title %></p>
+  <p>Description: <%= @chef.description.nil? ? "No description available" : @chef.description %></p>
+  <p>Price: <%= @chef.price %></p>
+  <hr>
+  <%= button_to "Book this chef", chef_bookings_path(@chef) %>
+  <% end %>
+  <% else %>
+  <p>Title: <%= @chef.title %></p>
+  <p>Description: <%= @chef.description.nil? ? "No description available" : @chef.description %></p>
+  <p>Price: <%= @chef.price %></p>
+  <hr>
+  <% end %>
+  <%= cl_image_tag(@chef.photo, width: 400, height: 300, crop: :fill) %>
+  <%= link_to "Go Back", chefs_path  %>
 </div>
-
-
-
-
-
 
 
 
