@@ -6,7 +6,7 @@
         <div class="chef-info">
           <h2><%= @chef.name %></h2>
           <p><%= @chef.title %></p>
-          <% if current_user.id = @chef.user_id %>
+          <% if current_user && current_user.id == @chef.user_id %>
           <p>This is your listing!</p>
           <%= button_to "Delete", chef_path(@chef), class:"profile. btn", method: :delete %>
           <% else %>
