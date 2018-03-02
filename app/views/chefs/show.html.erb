@@ -1,28 +1,43 @@
-<div class="chef_details">
-  <h1><%= @chef.name%><%="'s details"%></h1>
-  <% if user_signed_in? %>
-  <% if @chef.user_id == current_user.id %>
-  <p>This is your listing!</p>
-  <hr>
-  <p>Title: <%= @chef.title %></p>
-  <p>Description: <%= @chef.description.nil? ? "No description available" : @chef.description %></p>
-  <p>Price: <%= @chef.price %></p>
-  <hr>
-  <% else %>
-  <p>Title: <%= @chef.title %></p>
-  <p>Description: <%= @chef.description.nil? ? "No description available" : @chef.description %></p>
-  <p>Price: <%= @chef.price %></p>
-  <hr>
-  <%= button_to "Book this chef", chef_bookings_path(@chef) %>
-  <% end %>
-  <% else %>
-  <p>Title: <%= @chef.title %></p>
-  <p>Description: <%= @chef.description.nil? ? "No description available" : @chef.description %></p>
-  <p>Price: <%= @chef.price %></p>
-  <hr>
-  <% end %>
-  <%= cl_image_tag(@chef.photo, width: 400, height: 300, crop: :fill) %>
-  <%= link_to "Go Back", chefs_path  %>
+<div class="container-chef-show">
+  <div class="profile text-center">
+    <div class="main">
+      <div class="main-content">
+        <%#= image_tag @chef.photo %>
+        <h2><%= @chef.name %> </h2>
+        <% if @chef.user_id == current_user.id %>
+        <p>This is your listing!</p>
+        <% else %>
+        <%= button_to "Book This Chef", chef_bookings_path(@chef) , {class: 'btn btn-small'}%>
+        <% end %>
+      </div>
+    </div>
+    <div class="stat">
+      <div class="stat-content">
+        <h3>5/5</h3>
+        <p>Rating</p>
+      </div>
+    </div>
+    <div class="stat">
+      <div class="stat-content">
+        <h3>187</h3>
+        <p>Meals Total</p>
+      </div>
+    </div>
+    <div class="stat">
+      <div class="stat-content">
+        <h3>22</h3>
+        <p>Dishes</p>
+      </div>
+    </div>
+    <div class="description">
+      <div class="description-content">
+        <h3>More about this chef</h3>
+        <p class="text-justify">
+          <%= @chef.description %>
+        </p>
+      </div>
+    </div>
+  </div>
 </div>
 
 
