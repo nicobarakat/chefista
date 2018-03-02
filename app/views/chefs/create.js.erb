@@ -1,0 +1,16 @@
+function refreshForm(innerHTML) {
+  const newChefForm = document.getElementById('new_chef');
+  newChefForm.innerHTML = innerHTML;
+}
+
+function addChef(chefHTML) {
+  const chefs = document.getElementById('chefs');
+  chefs.insertAdjacentHTML('beforeend', chefHTML);
+}
+
+<% if @chef.errors.any? %>
+  refreshForm('<%= j render "chefs/form", chef: @chef %>');
+<% else %>
+  addchef('<%= j render "chefs/show", chef: @chef %>');
+  refreshForm('<%= j render "chefs/form", chef: chef.new %>');
+<% end %>
