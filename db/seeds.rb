@@ -37,7 +37,9 @@ chef = Chef.new({
   title: "Meatball marinara master",
   price: 0,
   remote_photo_url: cl_image_path("Feiko.jpg"),
-  address: "Overhoeksplein"
+  address: "Overhoeksplein",
+  description: "I have been a food lover all my life, and from the time I baked my own apple pies in winter, I have developed myself at Le Cordon Bleu in Paris. But after all, I love stamppotten and meatballs the most.
+  Loved for being frugal and filling, stamppotten are also very healthy. Potatoes are packed with potassium and vitamin C, while the ‘’queen of greens’' contains numerous health benefiting polyphenolic flavonoid compounds such as lutein, zea-xanthin and beta-carotene, and is said to be richer source of vitamins than any other green leafy vegetable."
   })
 chef.save!
 

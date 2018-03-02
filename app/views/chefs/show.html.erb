@@ -32,6 +32,7 @@
       <div class="description-content">
         <h3>More about this chef</h3>
         <p class="text-justify">
+          <%= @chef.description.nil? ? "No description available" : @chef.description %>
         </p>
       </div>
     </div>
