@@ -1,6 +1,5 @@
-
-<h1>Messages</h1>
 <div class="container">
+<h1 class="title-inbox">Messages</h1>
 <hr>
 <h3>Received requests</h3>
 <% if current_user.is_chef? %>
@@ -9,24 +8,19 @@
   <% if current_user.id == booking.chef.user_id %>
   <li class="message">
     <div class="message-name">
-      <h4>New request</h4>
+      <h4><%= booking.created_at.strftime("%m/%d/%Y") %>
+      </h4>
     </div>
     <div class="message-body">
-      <p>You received a new request from <%= link_to User.find(booking.user_id).email, "#"  %> </p>
-      <p> <%= booking.created_at %> </p>
+      <h6><%= link_to User.find(booking.user_id).email, "#"  %> requested you for its event
+      </h6>
     </div>
-    <div class="message-status">
-      <p> Confirm </p>
+    <div class="status-pending">
+      <p> <%= link_to "Confirm", "" %> </p>
     </div>
   </li>
   <% end %>
   <% end %>
-  <% else %>
-  <ul>
-    <p>
-      <h4></h4>
-    </p>
-  </ul>
   <% end %>
 </ul>
 <hr>
@@ -36,13 +30,14 @@
   <% if current_user.id == booking.user_id%>
   <li class="message">
     <div class="message-name">
-      <h4> You've sent a new request!</h4>
+      <h4><%= booking.created_at.strftime("%m/%d/%Y") %>
+      </h4>
     </div>
     <div class="message-body">
-      <p>Chef you've requested: <%= link_to Chef.find(booking.chef.id).name, "#"  %> </p>
-      <p> <%= booking.created_at %> </p>
+      <h6>Chef you've requested: <%= link_to Chef.find(booking.chef.id).name, "#"  %>
+      </h6>
     </div>
-    <div class="message-status">
+    <div class="status-accepted">
       <p> Accepted </p>
     </div>
   </li>
@@ -50,5 +45,7 @@
     <% end %>
     <% end %>
   </ul>
+  <div class="bottom"></div>
 </div>
+
 
