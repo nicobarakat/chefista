@@ -36,7 +36,8 @@ chef = Chef.new({
   name: "Feiko Boerstra",
   title: "Meatball marinara master",
   price: 0,
-  remote_photo_url: cl_image_path("Feiko.jpg")
+  remote_photo_url: cl_image_path("Feiko.jpg"),
+  address: "Overhoeksplein"
   })
 chef.save!
 
