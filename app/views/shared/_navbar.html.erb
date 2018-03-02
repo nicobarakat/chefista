@@ -18,8 +18,10 @@
 
 
     <!-- Avatar with dropdown menu -->
-    <%= link_to destroy_user_session_path, method: :delete do %>
-    <i class="fa fa-sign-out"></i>  <%= t(".sign_out", default: "Log out") %>
+
+    <%= link_to destroy_user_session_path, class: "log-out-link", method: :delete do %>
+      <i class="fa fa-sign-out"></i>  <%= t(".sign_out", default: "Log out") %>
+
     <% end %>
     <% else %>
     <!-- Login link (when logged out) -->
