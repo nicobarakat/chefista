@@ -33,11 +33,10 @@ chef = Chef.new({
 chef.save!
 
 chef = Chef.new({
-  name: "René Redzepi",
-  title: "Danish chef and owner of the 2 Michelin star restaurant Noma.",
-  price: 200,
-  remote_photo_url: cl_image_path("ReneRedzepi.jpg"),
-  address: Faker::Address.street_address #=> "282 Kevin Brook"
+  name: "Feiko Boerstra",
+  title: "Meatball marinara master",
+  price: 0,
+  remote_photo_url: cl_image_path("Feiko.jpg")
   })
 chef.save!
 
@@ -61,7 +60,7 @@ chef.save!
 
 chef = Chef.new({
   name: "Hélène Darroze",
-  title: "French chef, 2 Michelin stars and owner of 3 restaurants",
+  title: "French chef, 2 Michelin stars and owner of 3 restaurants.",
   price: 270,
   remote_photo_url: cl_image_path("HeleneDarroze.jpg"),
   address: Faker::Address.street_address #=> "282 Kevin Brook"
@@ -79,7 +78,7 @@ chef.save!
 
 chef = Chef.new({
   name: "Anthony Bourdain",
-  title: "Veteran of numerous professional kitchens",
+  title: "Veteran of numerous professional kitchens.",
   price: 260,
   remote_photo_url: cl_image_path("AnthonyBourdain.jpg"),
   address: Faker::Address.street_address #=> "282 Kevin Brook"
