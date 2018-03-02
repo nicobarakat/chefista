@@ -9,7 +9,7 @@
 
 
     <% if user_signed_in? %>
-    <% if user.is_chef? %>
+    <% if current_user.is_chef? %>
     <%= link_to "Inbox", bookings_path, class: "navbar-wagon-item navbar-wagon-link" %>
     <% else %>
     <%= link_to "Become A Chef!", new_chef_path, class: "navbar-wagon-item navbar-wagon-link" %>
