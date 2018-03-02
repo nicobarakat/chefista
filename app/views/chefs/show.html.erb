@@ -4,11 +4,17 @@
       <div class="main-content">
         <%#= image_tag @chef.photo %>
         <h2><%= @chef.name %> </h2>
+        <% if signed_in? %>
         <% if @chef.user_id == current_user.id %>
         <p>This is your listing!</p>
         <% else %>
         <%= button_to "Book This Chef", chef_bookings_path(@chef) , {class: 'btn btn-small'}%>
         <% end %>
+
+        <% else %>
+
+        <% end %>
+
       </div>
     </div>
     <div class="stat">
@@ -40,6 +46,8 @@
   </div>
 </div>
 
+<div id="map" style="width: 100%; height: 600px;" data-markers="<%= @markers.to_json %>">
+</div>
 
 
 
