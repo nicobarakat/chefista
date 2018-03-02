@@ -24,4 +24,8 @@ class ChefPolicy < ApplicationPolicy
   def edit?
     return true
   end
+
+  def destroy?
+    return true
+  end
 end
