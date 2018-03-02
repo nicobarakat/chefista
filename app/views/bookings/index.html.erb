@@ -1,46 +1,48 @@
 <div class="container">
-<h1 class="title-inbox">Messages</h1>
-<hr>
-<h3>Received requests</h3>
-<% if current_user.is_chef? %>
-<ul>
-  <% Booking.all.each do |booking| %>
-  <% if current_user.id == booking.chef.user_id %>
-  <li class="message">
-    <div class="message-name">
-      <h4><%= booking.created_at.strftime("%m/%d/%Y") %>
-      </h4>
-    </div>
-    <div class="message-body">
-      <h6><%= link_to User.find(booking.user_id).email, "#"  %> requested you for an event
-      </h6>
-    </div>
-    <div class="status-pending">
-      <p> <%= link_to "Confirm", "" %> </p>
-    </div>
-  </li>
-  <% end %>
-  <% end %>
-  <% end %>
-</ul>
-<hr>
-<h3>Sent requests</h3>
-<ul>
-  <% Booking.all.each do |booking| %>
-  <% if current_user.id == booking.user_id%>
-  <li class="message">
-    <div class="message-name">
-      <h4><%= booking.created_at.strftime("%m/%d/%Y") %>
-      </h4>
-    </div>
-    <div class="message-body">
-      <h6>Chef you've requested: <%= link_to Chef.find(booking.chef.id).name, chef_path(Chef.find(booking.chef.id)  %>
-      </h6>
-    </div>
-    <div class="message-status">
-      <p> Pending </p>
-    </div>
-  </li>
+  <h1 class="title-inbox">Messages</h1>
+  <h1> <%= link_to "Go Back", chefs_path , class:"profile. btn"  %> </h1>
+
+  <hr>
+  <h3>Received requests</h3>
+  <% if current_user.is_chef? %>
+  <ul>
+    <% Booking.all.each do |booking| %>
+    <% if current_user.id == booking.chef.user_id %>
+    <li class="message">
+      <div class="message-name">
+        <h4><%= booking.created_at.strftime("%m/%d/%Y") %>
+        </h4>
+      </div>
+      <div class="message-body">
+        <h6><%= link_to User.find(booking.user_id).email, "#"  %> requested you for its event
+        </h6>
+      </div>
+      <div class="status-pending">
+        <p> <%= link_to "Confirm", "" %> </p>
+      </div>
+    </li>
+    <% end %>
+    <% end %>
+    <% end %>
+  </ul>
+  <hr>
+  <h3>Sent requests</h3>
+  <ul>
+    <% Booking.all.each do |booking| %>
+    <% if current_user.id == booking.user_id%>
+    <li class="message">
+      <div class="message-name">
+        <h4><%= booking.created_at.strftime("%m/%d/%Y") %>
+        </h4>
+      </div>
+      <div class="message-body">
+        <h6>Chef you've requested: <%= link_to Chef.find(booking.chef.id).name, "#"  %>
+        </h6>
+      </div>
+      <div class="message-status">
+        <p> Pending </p>
+      </div>
+    </li>
     <hr>
     <% end %>
     <% end %>
