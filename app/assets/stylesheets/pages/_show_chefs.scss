@@ -2,7 +2,6 @@
   padding: 10px 100px;
   margin-left: 20px;
   margin-right: 20px;
-  background-image: image-url('background-chef-show.jpg');
   background: cover;
  }
 
@@ -88,21 +87,21 @@
   color: rgba(0,0,0,0.25);
   font-size: 19px;
 }
-.description h3 {
+.description-show h3 {
   color: rgba(0,0,0,0.9);
   font-size: 21px;
   font-weight: normal;
 }
-.description p {
+.description-show p {
   color: rgba(0,0,0,0.5);
   font-weight: lighter;
 }
 
-.chef-details {
+.chef-details-show {
   font-family: Arial serif;
 }
 
-.card {
+.card-show {
   background-size: cover;
   background-position: center;
   height: 150px;

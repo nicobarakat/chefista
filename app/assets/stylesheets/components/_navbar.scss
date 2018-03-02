@@ -4,11 +4,17 @@
   // background-image: image-url()
   background-color: #0B1D33;
   transition: all 0.3s ease;
-  height: 50px;
+  height: 60px;
   padding: 0px 30px;
   display: flex;
   align-items: center;
   justify-content: space-between;
+}
+.home .navbar-wagon {
+  background-color: transparent;
+}
+.home .wrapper {
+  margin-top: -60px;
 }
 
 /* Logo */
