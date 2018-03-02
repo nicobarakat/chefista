@@ -2,11 +2,15 @@
 <div class="container-chef-show">
   <div class="profile text-center">
     <div class="main">
+
       <div class="main-content">
-        <%= image_tag "matt-preston.jpg" %>
-        <h2>Chef name</h2>
-        <p>Specialties</p>
-        <a href="#" class="btn btn-primary btn-lg">Book me now!</a>
+        <%= cl_image_tag(@chef.photo, width: 250, height: 250, crop: :fill, class:"img-circle") %>
+        <div class="chef-info">
+          <h2><%= @chef.name %></h2>
+          <p><%= @chef.title %></p>
+          <%= button_to "Book this chef", chef_bookings_path(@chef), class:"profile. btn" %>
+
+        </div>
       </div>
     </div>
     <div class="stat">
