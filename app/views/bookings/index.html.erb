@@ -34,7 +34,7 @@
       </h4>
     </div>
     <div class="message-body">
-      <h6>Chef you've requested: <%= link_to Chef.find(booking.chef.id).name, "#"  %>
+      <h6>Chef you've requested: <%= link_to Chef.find(booking.chef.id).name, chef_path(Chef.find(booking.chef.id)  %>
       </h6>
     </div>
     <div class="message-status">
