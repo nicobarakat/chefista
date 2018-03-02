@@ -53,36 +53,3 @@
 
 
 
-<!-- <div class="container-chef-show">
-  <div class="chef_details">
-    <h1><%= @chef.name%><%="'s details"%></h1>
-
-    <% if @chef.user_id == current_user.id %>
-    <p>This is your listing!</p>
-
-    <hr>
-
-    <p>Title: <%= @chef.title %></p>
-    <p>Description: <%= @chef.description.nil? ? "No description available" : @chef.description %></p>
-    <p>Price: <%= @chef.price %></p>
-
-    <hr>
-
-    <% else %>
-
-    <p>Title: <%= @chef.title %></p>
-    <p>Description: <%= @chef.description.nil? ? "No description available" : @chef.description %></p>
-    <p>Price: <%= @chef.price %></p>
-    <hr>
-    <%= button_to "Book this chef", chef_bookings_path(@chef) %>
-    <% end %>
-
-    <%= cl_image_tag(@chef.photo, width: 400, height: 300, crop: :fill) %>
-
-    <div>
-    <%= link_to "Go Back", chefs_path  %>
-    </div>
-
-  </div>
-</div>
- -->

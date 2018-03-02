@@ -6,6 +6,8 @@ class Chef < ApplicationRecord
   validates :title, presence: true
   validates :price, presence: true
   validates :address, presence: true
+  validates :photo, presence: true
+
   after_validation :geocode, if: :will_save_change_to_address?
   mount_uploader :photo, PhotoUploader
 end
