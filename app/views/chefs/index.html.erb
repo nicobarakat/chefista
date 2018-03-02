@@ -6,7 +6,7 @@
 <div class="container">
   <div class="row">
     <% @chefs.each do |chef| %>
-      <div class="card">
+      <div class="card-index">
         <div class="col-xs-12 col-sm-4">
           <div class="card-picture" style="background-image: url('<%= cl_image_path chef.photo %>');">
              <%= link_to "", chef_path(chef), class: "card-link" %>
