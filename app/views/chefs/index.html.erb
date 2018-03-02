@@ -21,7 +21,11 @@
         </div>
         <div class="col-xs-4">
           <div class="price">
-            <span><%= chef.price %>€</span> <span>pp</span>
+            <% if chef.price == 0 %>
+              <span><%= "FREE" %></span>
+            <% else %>
+              <span><%= chef.price %>€</span> <span>pp</span>
+            <% end %>
           </div>
         </div>
         <% end %>

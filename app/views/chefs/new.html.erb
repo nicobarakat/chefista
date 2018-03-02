@@ -1,16 +1,20 @@
-<h1>Share Your Chef Skills With The World</h1>
+<div class="newchefpage">
+  <div class="container-newchef">
+    <h1>Share Your Chef Skills With The World</h1>
 
-<%= simple_form_for @chef do |f| %>
-<%= f.input :name %>
-<%= f.input :title %>
-<%= f.input :description %>
-<%= f.input :price %>
-<%= f.input :address %>
-<%= f.input :photo %>
-<%= f.input :photo_cache, as: :hidden %>
-<%= f.button :submit %>
-<%= link_to "Cancel", chefs_path, value: "Publish", class: "btn btn-warning" %>
-<% end %>
+    <%= simple_form_for @chef do |f| %>
+    <%= f.input :name %>
+    <%= f.input :title %>
+    <%= f.input :description %>
+    <%= f.input :price %>
+    <%= f.input :address %>
+    <%= f.input :photo %>
+    <%= f.input :photo_cache, as: :hidden %>
+    <%= f.button :submit %>
+    <%= link_to "Cancel", chefs_path, value: "Publish", class: "btn btn-warning" %>
+    <% end %>
+  </div>
+</div>
 
 
 
