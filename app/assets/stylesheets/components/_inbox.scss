@@ -1,0 +1,10 @@
+.message {
+  background: white;
+  padding: 10px;
+  display: flex;
+  align-item: center;
+}
+
+.message-body {
+  flex-grow: 1;
+}

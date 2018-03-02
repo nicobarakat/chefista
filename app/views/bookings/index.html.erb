@@ -1,30 +1,21 @@
-<h1>Messages</h1>
-<hr>
-<h3>Requests You've Received</h3>
+<h1>Inbox</h1>
 <% if current_user.is_chef? %>
+<hr>
+<h3>Your bookings</h3>
 <ul>
   <% Booking.all.each do |booking| %>
-  <% if current_user.id == booking.chef.user_id %>
-  <h4> You have a new request!</h4>
-  <p>User requesting this booking: <%= link_to User.find(booking.user_id).email, "#"  %> </p>
-  <p> <%= booking.created_at %> </p>
-  <p> <%= booking.confirmation ? "This booking is confirmed!" : "Awaiting your approval:" %> </p>
-  <% end %>
-  <% end %>
 
-  <% else %>
-
-  <ul>
-    <p>
-      <h4>You're not a chef! You can't receive requests!</h4>
-    </p>
-  </ul>
+    <h4> New request </h4>
+    <p>User requesting this booking: <%= link_to User.find(booking.user_id).email, "#"  %></p>
+    <p> <%= booking.created_at %> </p>
+    <p> <%= booking.confirmation ? "Confirmed" : "Confirm:" %> </p>
   <% end %>
+<% end %>
 
 </ul>
 
 <hr>
-<h3>Requests You've Sent</h3>
+<h3>Your requests</h3>
 <ul>
   <% Booking.all.each do |booking| %>
   <% if current_user.id == booking.user_id%>
@@ -38,3 +29,19 @@
   <% end %>
   <% end %>
 </ul>
+<hr>
+
+<div class="message">
+  <img src="..." class="message-avatar">
+  <div class="message-name">
+    <h2>user.name</h2>
+    <p>Requested made at</p>
+  </div>
+  <div class="message-body">
+    <p>I'll be glad...</p>
+  </div>
+  <div class="message-status">
+    <p>Accepted</p>
+    <p>€354</p>
+  </div>
+</div>
